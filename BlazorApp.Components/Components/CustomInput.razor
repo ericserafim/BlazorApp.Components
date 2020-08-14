@@ -1,0 +1,19 @@
+﻿@if (Type == InputType.Combobox)
+{
+    <div class="form-group">
+        <label for="@Id">Example select</label>
+        <select class="form-control" id="@Id">
+            @foreach (var item in Items)
+            {
+                <option>@item</option>
+            }
+        </select>
+    </div>
+}
+else
+{
+    <div class="form-group">
+        <label for="@Id">@Label</label>
+        <input type="@TypeStr" class="form-control" id="@Id" placeholder="@Placeholder" @bind="Value">
+    </div>
+}

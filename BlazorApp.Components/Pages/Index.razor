@@ -1,0 +1,26 @@
+﻿@using BlazorApp.Components.Components
+
+@page "/"
+
+<form>
+    <CustomInput Id="text1" Label="Text" Placeholder="Input a text here" Type="InputType.Text" @bind-Value="_text"/>
+    <CustomInput Id="date1" Label="Date and time" Type="InputType.DateTime" />
+    <CustomInput Id="email1" Label="Email" Placeholder="example@gmail.com" Type="InputType.Email" />
+    <CustomInput Id="combo1" Label="Types" Placeholder="Select an item" Type="InputType.Combobox" Items="@(new string[] { "Item 1", "Item 2", "Item 3"})" />    
+</form>
+
+<button @onclick="OnSubmit">Submit</button>
+
+@code {
+
+  private string _text;
+  private DateTime _date;
+  private string _email;
+  private string _comboSelectedItem;
+
+
+  private void OnSubmit()
+  {
+      Console.WriteLine($"_text1 = {_text}");
+  }
+}
