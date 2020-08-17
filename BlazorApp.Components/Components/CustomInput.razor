@@ -2,7 +2,8 @@
 {
     <div class="form-group">
         <label for="@Id">Example select</label>
-        <select class="form-control" id="@Id">
+        <select class="form-control" id="@Id" @onchange="@OnInputChange">
+            <option disabled hidden>Select an item</option>
             @foreach (var item in Items)
             {
                 <option>@item</option>
@@ -14,6 +15,6 @@ else
 {
     <div class="form-group">
         <label for="@Id">@Label</label>
-        <input type="@TypeStr" class="form-control" id="@Id" placeholder="@Placeholder" @bind="Value">
+        <input type="@TypeStr" class="form-control" id="@Id" placeholder="@Placeholder" value="@Value" @oninput="@OnInputChange">
     </div>
 }
